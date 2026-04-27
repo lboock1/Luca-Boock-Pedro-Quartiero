@@ -10,5 +10,11 @@ def guardar_dado(dados_r, dados_g, indice):
     dados_g.append(dado)
     return [dados_r, dados_g]
 
+def remover_dado(dados_r, dados_g, indice):
+    dado= dados_g.pop(indice)
+    dados_r.append(dado)
+    return [dados_r, dados_g]
+
+
  
     
