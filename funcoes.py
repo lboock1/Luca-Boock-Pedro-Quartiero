@@ -25,6 +25,12 @@ def calcula_pontos_regra_simples(faces_r):
         pontos[face]=soma
     return pontos
 
+def calcula_pontos_soma(faces_r):
+    total=0
+    for dado in faces_r:
+        total +=dado
+    return total
+
 
 
 
