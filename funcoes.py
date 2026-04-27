@@ -91,12 +91,12 @@ def calcula_pontos_quina(faces_r):
 
 def calcula_pontos_regra_avancada(faces_r):
     return {
-        'cinco_iguais': cinco_iguais(faces_r),
-        'full_house': full_house(faces_r),
-        'quadra': quadra(faces_r),
-        'sem_combinacao': sem_combinacao(faces_r),
-        'sequencia_alta': sequencia_alta(faces_r),
-        'sequencia_baixa': sequencia_baixa(faces_r)
+        'cinco_iguais': calcula_pontos_quina(faces_r),
+        'full_house': calcula_pontos_full_house(faces_r),
+        'quadra': calcula_pontos_quadra(faces_r),
+        'sem_combinacao': calcula_pontos_soma(faces_r),
+        'sequencia_alta': calcula_pontos_sequencia_alta(faces_r),
+        'sequencia_baixa': calcula_pontos_sequencia_baixa(faces_r)
     }
 
         
