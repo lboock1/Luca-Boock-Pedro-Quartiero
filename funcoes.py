@@ -30,6 +30,15 @@ def calcula_pontos_soma(faces_r):
     for dado in faces_r:
         total +=dado
     return total
+ 
+def calcula_pontos_sequencia_baixa(faces_r):
+    if 1 in faces_r and 2 in faces_r and 3 in faces_r and 4 in faces_r:
+        return 15
+    if 2 in faces_r and 3 in faces_r and 4 in faces_r and 5 in faces_r:
+        return 15
+    if 3 in faces_r and 4 in faces_r and 5 in faces_r and 6 in faces_r:
+        return 15
+    return 0
 
 
 
