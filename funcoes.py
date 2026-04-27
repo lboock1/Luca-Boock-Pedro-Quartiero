@@ -77,6 +77,18 @@ def calcula_pontos_quadra(faces_r):
             return total
     return 0
 
+def calcula_pontos_quina(faces_r):  
+    c={} 
+    for dado in faces_r:
+        if dado in c:
+            c[dado] += 1
+        else:
+            c[dado] = 1
+    for valor in c:
+        if c[valor] >=5:
+            return 50
+    return 0
+
         
 
 
