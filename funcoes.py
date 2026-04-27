@@ -47,6 +47,21 @@ def calcula_pontos_sequencia_alta(faces_r):
         return 30
     return 0
 
+def calcula_pontos_full_house(faces_r):
+    c={}
+    for dado in faces_r:
+        if dado in c:
+            c[dado] += 1
+        else:
+            c[dado] = 1
+    valores = list(c.values())
+    if 3 in valores and 2 in valores:
+        total = 0
+        for f in faces_r:
+            total += f
+        return total
+    return 0           
+
 
 
 
