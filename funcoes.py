@@ -60,7 +60,25 @@ def calcula_pontos_full_house(faces_r):
         for f in faces_r:
             total += f
         return total
-    return 0           
+    return 0
+
+def calcula_pontos_quadra(faces_r):
+    c={} 
+    for dado in faces_r:
+        if dado in c:
+            c[dado] += 1
+        else:
+            c[dado] = 1
+    for valor in c:
+        if c[valor] >=4:
+            total= 0
+            for f in faces_r:
+                total+=f
+            return total
+    return 0
+
+        
+
 
 
 
