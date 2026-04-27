@@ -15,6 +15,18 @@ def remover_dado(dados_r, dados_g, indice):
     dados_r.append(dado)
     return [dados_r, dados_g]
 
+def calcula_pontos_regra_simples(faces_r):
+    pontos={}
+    for face in range(1,7):
+        soma=0
+        for dado in faces_r:
+            if dado==face:
+                soma +=dado
+        pontos[face]=soma
+    return pontos
+
+
+
 
  
     
