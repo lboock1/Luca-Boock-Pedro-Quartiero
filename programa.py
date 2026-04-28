@@ -1,5 +1,7 @@
 from funcoes import *
 cartela={'regra_simples':{i:-1 for i in range(1,7)},'regra_avancada':{'sem_combinacao':-1,'quadra':-1,'full_house':-1,'sequencia_baixa':-1,'sequencia_alta':-1,'cinco_iguais':-1}}
+
+imprime_cartela(cartela)
 for rodada in range(12):
     dados=rolar_dados(5)
     guardados=[]
