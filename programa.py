@@ -15,9 +15,9 @@ for rodada in range(12):
     guardados = []
     rerrolagens = 0
     jogada_feita = False
+    print(f"Dados rolados: {dados}")
+    print(f"Dados guardados: {guardados}")
     while jogada_feita == False:
-        print(f"Dados rolados: {dados}")
-        print(f"Dados guardados: {guardados}")
         print("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
         opcao = input()
         if opcao == "1":
@@ -61,6 +61,9 @@ for rodada in range(12):
                     print("Combinação inválida. Tente novamente.")
         else:
             print("Opção inválida. Tente novamente.")
+        if not jogada_feita:
+            print(f"Dados rolados: {dados}")
+            print(f"Dados guardados: {guardados}")
 imprime_cartela(cartela)
 total = 0
 soma_simples = 0
