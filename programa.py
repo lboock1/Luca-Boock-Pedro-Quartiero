@@ -16,7 +16,7 @@ imprime_cartela(cartela)
 
 while True:
 
-    # condição de parada correta
+    # parar exatamente quando a cartela estiver completa
     if all(v != -1 for v in cartela['regra_simples'].values()) and \
        all(v != -1 for v in cartela['regra_avancada'].values()):
         break
@@ -59,28 +59,34 @@ while True:
             imprime_cartela(cartela)
 
         elif opcao == "0":
-            print("Digite a combinação desejada:")
-            categoria = input()
 
-            if categoria in [str(i) for i in range(1,7)]:
-                if cartela['regra_simples'][int(categoria)] != -1:
-                    print("Essa combinação já foi utilizada.")
-                    continue
-                faz_jogada(dados_rolados + dados_guardados, categoria, cartela)
-                break
+            
+            while True:
+                print("Digite a combinação desejada:")
+                categoria = input()
 
-            elif categoria in cartela['regra_avancada']:
-                if cartela['regra_avancada'][categoria] != -1:
-                    print("Essa combinação já foi utilizada.")
-                    continue
-                faz_jogada(dados_rolados + dados_guardados, categoria, cartela)
-                break
+                if categoria in [str(i) for i in range(1,7)]:
+                    if cartela['regra_simples'][int(categoria)] != -1:
+                        print("Essa combinação já foi utilizada.")
+                    else:
+                        faz_jogada(dados_rolados + dados_guardados, categoria, cartela)
+                        break
 
-            else:
-                print("Combinação inválida. Tente novamente.")
+                elif categoria in cartela['regra_avancada']:
+                    if cartela['regra_avancada'][categoria] != -1:
+                        print("Essa combinação já foi utilizada.")
+                    else:
+                        faz_jogada(dados_rolados + dados_guardados, categoria, cartela)
+                        break
+
+                else:
+                    print("Combinação inválida. Tente novamente.")
+
+            break
 
         else:
             print("Opção inválida. Tente novamente.")
+
 
 imprime_cartela(cartela)
 
