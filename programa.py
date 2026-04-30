@@ -17,8 +17,9 @@ for rodada in range(12):
     dados_guardados = []
     rerrolagens = 2
 
+    imprime_cartela(cartela)  # ✅ só aqui no início
+
     while True:
-        imprime_cartela(cartela)
         print(f"Dados rolados: {dados_rolados}")
         print(f"Dados guardados: {dados_guardados}")
         print("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
@@ -43,10 +44,9 @@ for rodada in range(12):
                 print("Você já usou todas as rerrolagens.")
 
         elif opcao == "4":
-            imprime_cartela(cartela)
+            imprime_cartela(cartela)  # ✅ só quando usuário pede
 
         elif opcao == "0":
-
             while True:
                 print("Digite a combinação desejada:")
                 categoria = input()
