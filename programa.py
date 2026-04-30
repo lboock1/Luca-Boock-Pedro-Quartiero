@@ -12,12 +12,13 @@ cartela = {
     }
 }
 
+
+imprime_cartela(cartela)
+
 for rodada in range(12):
     dados_rolados = rolar_dados(5)
     dados_guardados = []
     rerrolagens = 2
-
-    imprime_cartela(cartela)  # ✅ só aqui no início
 
     while True:
         print(f"Dados rolados: {dados_rolados}")
@@ -44,7 +45,7 @@ for rodada in range(12):
                 print("Você já usou todas as rerrolagens.")
 
         elif opcao == "4":
-            imprime_cartela(cartela)  # ✅ só quando usuário pede
+            imprime_cartela(cartela)
 
         elif opcao == "0":
             while True:
@@ -64,7 +65,6 @@ for rodada in range(12):
                         break
                     else:
                         print("Essa combinação já foi utilizada.")
-
                 else:
                     print("Combinação inválida. Tente novamente.")
 
@@ -73,9 +73,15 @@ for rodada in range(12):
         else:
             print("Opção inválida. Tente novamente.")
 
+
 imprime_cartela(cartela)
 
-total = sum(v for v in cartela['regra_simples'].values() if v != -1) + \
-        sum(v for v in cartela['regra_avancada'].values() if v != -1)
+
+soma_simples = sum(v for v in cartela['regra_simples'].values() if v != -1)
+
+bonus = 35 if soma_simples >= 63 else 0
+
+
+total = soma_simples + bonus + sum(v for v in cartela['regra_avancada'].values() if v != -1)
 
 print(f"Pontuação total: {total}")
