@@ -14,7 +14,13 @@ cartela = {
 
 imprime_cartela(cartela)
 
-for rodada in range(12):
+while True:
+
+    # condição de parada correta
+    if all(v != -1 for v in cartela['regra_simples'].values()) and \
+       all(v != -1 for v in cartela['regra_avancada'].values()):
+        break
+
     dados_rolados = rolar_dados(5)
     dados_guardados = []
     rerrolagens = 0
@@ -60,25 +66,21 @@ for rodada in range(12):
                 if cartela['regra_simples'][int(categoria)] != -1:
                     print("Essa combinação já foi utilizada.")
                     continue
-                dados_totais = dados_rolados + dados_guardados
-                faz_jogada(dados_totais, categoria, cartela)
+                faz_jogada(dados_rolados + dados_guardados, categoria, cartela)
                 break
 
             elif categoria in cartela['regra_avancada']:
                 if cartela['regra_avancada'][categoria] != -1:
                     print("Essa combinação já foi utilizada.")
                     continue
-                dados_totais = dados_rolados + dados_guardados
-                faz_jogada(dados_totais, categoria, cartela)
+                faz_jogada(dados_rolados + dados_guardados, categoria, cartela)
                 break
 
             else:
                 print("Combinação inválida. Tente novamente.")
-                continue
 
         else:
             print("Opção inválida. Tente novamente.")
-
 
 imprime_cartela(cartela)
 
