@@ -91,13 +91,13 @@ def calcula_pontos_quina(faces_r):
 
 def calcula_pontos_regra_avancada(faces_r):
     return {
-        'cinco_iguais': calcula_pontos_quina(faces_r),
-        'full_house': calcula_pontos_full_house(faces_r),
-        'quadra': calcula_pontos_quadra(faces_r),
-        'sem_combinacao': calcula_pontos_soma(faces_r),
-        'sequencia_alta': calcula_pontos_sequencia_alta(faces_r),
-        'sequencia_baixa': calcula_pontos_sequencia_baixa(faces_r)
-    }
+    'sem_combinacao': calcula_pontos_soma(faces_r),
+    'quadra': calcula_pontos_quadra(faces_r),
+    'full_house': calcula_pontos_full_house(faces_r),
+    'sequencia_baixa': calcula_pontos_sequencia_baixa(faces_r),
+    'sequencia_alta': calcula_pontos_sequencia_alta(faces_r),
+    'cinco_iguais': calcula_pontos_quina(faces_r)
+}
 
 def faz_jogada(dados,categoria, cartela):
     if categoria in ["1", "2", "3", "4", "5", "6"]:
